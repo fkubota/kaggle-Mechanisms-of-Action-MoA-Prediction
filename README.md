@@ -41,11 +41,21 @@ sample_submission.csv - 正しい形式の提出ファイル．
 
 
 ### input
+**shape**
+|filename|shape|
+|---|---|
+|||
+
 **train_fatures.cv**
 shape: (23814, 876)
 |columns|detail|
 |---|---|
-|hoge|hoge|
+|sig_id|id|
+|cp_type|hoge|
+|cp_time|hoge|
+|cp_dose|hoge|
+|g-[0, 771]|hoge|
+|c-[0, 99]|hoge|
 
 ## features
 ## Log
@@ -54,10 +64,15 @@ shape: (23814, 876)
 - data download
 - data size list
 
-    |filename|file size|
-    |----|---|
-    |sample_submission.csv|3.2M|
-    |test_features.csv|25M|
-    |train_features.csv|150M|
-    |train_targets_nonscored.csv|19M|
-    |train_targets_scored.csv|9.7M|
+    |filename|file size|shape|
+    |----|---|---|
+    |sample_submission.csv|3.2M|(3,982, 207)|
+    |test_features.csv|25M|(3,982, 876)|
+    |train_features.csv|150M|(23,814, 876)|
+    |train_targets_nonscored.csv|19M|(23,814, 403)|
+    |train_targets_scored.csv|9.7M|(23,814, 207)|
+
+- nb001
+    - inputデータのEDAを行った
+
+### 20201007
