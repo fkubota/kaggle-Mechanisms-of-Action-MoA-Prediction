@@ -1,0 +1,8 @@
+*.ipynb_checkpoints
+*checkpoint.ipynb
+.ipynb_checkpoints
+data_ignore/*
+__pycache__/
+*.py[cod]
+*.swp
+!.gitkeep
