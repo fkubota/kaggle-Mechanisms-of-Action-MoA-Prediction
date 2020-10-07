@@ -33,7 +33,7 @@ MoAアノテーションに基づいて、各薬剤-MoAアノテーションの�
 トレーニングデータには、テストデータには含まれず、スコアリングには使用されないMoAラベルの追加（オプション）セットがあります。
 再実行データセットは、パブリックテストで見られる例の約4倍の数を持っています。
 
-train_features.csv - 訓練セットの特徴量．cp_type は化合物（cp_vehicle）または対照摂動（ctrl_vehicle）で処理されたサンプルを示し、対照摂動は MoA を持たない。
+train_features.csv - 訓練セットの特徴量．cp_type は化合物（cp_vehicle）または制御摂動（ctrl_vehicle）で処理されたサンプルを示し、制御摂動は MoA を持たない。cp_timeおよびcp_doseは、治療期間（24時間、48時間、72時間）および投与量（高値または低値）を示す。
 train_targets_scored.csv - スコアされるバイナリMoAターゲット。
 train_targets_nonscored.csv - 訓練データの追加の（オプションの）バイナリMoA反応。これらは予測もスコア化もされません．
 test_features.csv - テストデータの特徴量．テストデータの各行のスコアされたMoAの確率を予測する必要があります．
@@ -41,21 +41,27 @@ sample_submission.csv - 正しい形式の提出ファイル．
 
 
 ### input
-**shape**
-|filename|shape|
-|---|---|
-|||
+
+|filename|file size|shape|
+|----|---|---|
+|sample_submission.csv|3.2M|(3,982, 207)|
+|test_features.csv|25M|(3,982, 876)|
+|train_features.csv|150M|(23,814, 876)|
+|train_targets_nonscored.csv|19M|(23,814, 403)|
+|train_targets_scored.csv|9.7M|(23,814, 207)|
 
 **train_fatures.cv**
-shape: (23814, 876)
+- shape: (23814, 876)
+- cpはcompoundの略っぽい
+
 |columns|detail|
 |---|---|
 |sig_id|id|
-|cp_type|hoge|
-|cp_time|hoge|
-|cp_dose|hoge|
-|g-[0, 771]|hoge|
-|c-[0, 99]|hoge|
+|cp_type|化合物で処理されたのか、制御摂動で処理されたのかを示す。cp_vehicl or cp_ctrlの二値を取る。制御摂動(cp_ctrl)はMoAを持たない。|
+|cp_time|処理時間|
+|cp_dose|投与量|
+|g-[0, 771]|signify gene expression data|
+|c-[0, 99]|signify cell viability data.|
 
 ## features
 ## Log
@@ -64,15 +70,10 @@ shape: (23814, 876)
 - data download
 - data size list
 
-    |filename|file size|shape|
-    |----|---|---|
-    |sample_submission.csv|3.2M|(3,982, 207)|
-    |test_features.csv|25M|(3,982, 876)|
-    |train_features.csv|150M|(23,814, 876)|
-    |train_targets_nonscored.csv|19M|(23,814, 403)|
-    |train_targets_scored.csv|9.7M|(23,814, 207)|
 
 - nb001
     - inputデータのEDAを行った
 
 ### 20201007
+- 今日はkaggle日記にinputを追加。
+- この[EDA](https://www.kaggle.com/isaienkov/mechanisms-of-action-moa-prediction-eda)ノートブックを読んだ。
