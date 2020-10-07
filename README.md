@@ -1,9 +1,11 @@
 ![comp](./data/info/readme/001.png)
 # kaggle-Mechanisms-of-Action-MoA-Prediction
-Mechanisms of Action (MoA) Prediction コンペのリポジトリ
+[Mechanisms of Action (MoA) Prediction](https://www.kaggle.com/c/lish-moa/overview) コンペのリポジトリ
 
 
 ## Basics
+Mechanism of Action(MoA)とは、薬剤がその薬理学的効果を発揮するための特異的な生化学的相互作用を意味する。 ([参考](https://ja.wikipedia.org/wiki/作用機序))
+
 ### Overview(DeepL)
 MITとハーバード大学ブロード研究所、ハーバード大学イノベーション科学研究所（LISH）、NIH Common Funds Library of Integrated Network-Based Cellular Signatures（LINCS）内のプロジェクトであるコネクティビティマップは、MoA予測アルゴリズムの改善を通じて医薬品開発を前進させることを目的に、この課題を提示しています。
 
@@ -77,3 +79,6 @@ sample_submission.csv - 正しい形式の提出ファイル．
 ### 20201007
 - 今日はkaggle日記にinputを追加。
 - この[EDA](https://www.kaggle.com/isaienkov/mechanisms-of-action-moa-prediction-eda)ノートブックを読んだ。
+
+### 20201008
+- 銀河さんのいつもの[イケイケEDA](https://www.kaggle.com/headsortails/explorations-of-action-moa-eda)みてた。
