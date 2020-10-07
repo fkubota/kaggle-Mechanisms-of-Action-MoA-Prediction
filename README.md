@@ -58,8 +58,8 @@ sample_submission.csv - 正しい形式の提出ファイル．
 |---|---|
 |sig_id|id|
 |cp_type|化合物で処理されたのか、制御摂動で処理されたのかを示す。cp_vehicl or cp_ctrlの二値を取る。制御摂動(cp_ctrl)はMoAを持たない。|
-|cp_time|処理時間|
-|cp_dose|投与量|
+|cp_time|処理時間。24, 48, 72の3値を取る。|
+|cp_dose|投与量。D1, D2(high, low)の2種類。|
 |g-[0, 771]|signify gene expression data|
 |c-[0, 99]|signify cell viability data.|
 
