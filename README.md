@@ -82,3 +82,23 @@ sample_submission.csv - 正しい形式の提出ファイル．
 
 ### 20201008
 - 銀河さんのいつもの[イケイケEDA](https://www.kaggle.com/headsortails/explorations-of-action-moa-eda)みてた。
+    - Treatment features
+
+        <img src='./data/info/readme/002.png' width='500'>
+    
+    - Target
+        - MoAが同時に活性になっている数
+
+        <img src='./data/info/readme/003.png' width='500'>
+        
+    - 各クラスでアクティブになってる数(n_sample=23,814)
+        - 最大800以上
+        - 最小1
+
+        <img src='./data/info/readme/004.png' width='500'>
+
+### 20201010
+#### チームマージした日！！
+チーム名は、**May the CV be with you.** になった！
+
+<img src='./data/info/readme/005.png' width='1000'>
