@@ -62,12 +62,12 @@ sample_submission.csv - 正しい形式の提出ファイル．
 
 |columns|detail|
 |---|---|
-|sig_id|id|
+|sig_id|薬の種類|
 |cp_type|化合物で処理されたのか、制御摂動で処理されたのかを示す。cp_vehicl or cp_ctrlの二値を取る。制御摂動(cp_ctrl)はMoAを持たない。|
 |cp_time|処理時間。24, 48, 72の3値を取る。|
 |cp_dose|投与量。D1, D2(high, low)の2種類。|
-|g-[0, 771]|signify gene expression data|
-|c-[0, 99]|signify cell viability data.|
+|g-[0, 771]|signify gene expression data. mRNAのデータ。|
+|c-[0, 99]|signify cell viability data. 細胞の生存率を表す。|
 
 ## features
 ## Log
