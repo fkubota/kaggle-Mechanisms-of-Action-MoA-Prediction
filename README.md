@@ -119,3 +119,16 @@ sample_submission.csv - 正しい形式の提出ファイル．
 - cool_rabbitさんから得たとメイン知識をslideでまとめた
     - [googleslide](https://docs.google.com/presentation/d/1TyYxMozqOpxq0v212EIk8PLh53fdQ84AEM41otwAHvQ/edit#slide=id.g9c253d643f_0_348)
 - ひらゆきさんとNicoNecoさんが参考にしている[公開ノートブック](https://www.kaggle.com/nicohrubec/pytorch-multilabel-neural-network)をベースにしよう
+
+### 20201012
+- ベースラインの基礎としたい[公開ノートブック](https://www.kaggle.com/nicohrubec/pytorch-multilabel-neural-network/data?select=iterative-stratification-master)を見てた。
+    - かなりシンプルで勉強しやすい。
+
+- メンバーとpublicとprivateについて議論した。以下に[マインドマップ](https://drive.mindmup.com/map/1VMY-xOHTmjxZNqZdbZeo1aQIs_2-DPcL)でまとめた。
+    - localのtest = publicのtest っぽいな...。本当か？
+
+    <img src='./data/info/readme/006.png' width='1000'>
+
+- TASSANとにこ猫さんと議論した。nonscoredを使うときは、以下のようにすべきという見解になった。
+
+    <img src='./data/info/readme/007.png' width='500'>
