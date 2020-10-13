@@ -134,3 +134,27 @@ sample_submission.csv - 正しい形式の提出ファイル．
     <img src='./data/info/readme/007.png' width='500'>
 
 ### 20201013
+- ひらさんから教えてもらったMultilabelStratifiedKFoldがoverfitしやすいという[ディスカッション](https://www.kaggle.com/c/lish-moa/discussion/181340)
+
+- domain知識溜まりそうな[discussion](https://www.kaggle.com/c/lish-moa/discussion/184005)
+
+    - PGE2とLTB4は分子(targetのどれか)で、CREBがg-xxxのどれかに相当する。
+    - ATPからCREBまで続く回路がある
+    - CREBまでいくとある遺伝子が発現する
+    - 薬剤の投与で、この回路そ促進または、阻害することができる
+    - PGE2がEP2に反応？すると、CREBの遺伝子発現が促進される
+    - 逆にLTB4がBLT1に反応すると回路を阻害するため遺伝子発現は抑制される
+    - つまり、CREBなどの遺伝子発現を観測することで、PGE2やLTB4のどれが働いたのかが関節的にわかる。
+
+    <img src='./data/info/readme/008.png' width='500'>
+
+- dataに施した前処理は、quantile normalizationだけではないらしい。([discussion](https://www.kaggle.com/c/lish-moa/discussion/184005#1034211))
+
+- cool_rabbitさんに質問(コントロール群について)
+    - (fkubota)ctl_vehicleは薬剤を投与していないという認識なのですが正しいですか？
+    - (cool_rabbit)DMSOという薬液(濃度が薄ければ細胞には無害とされている)を投与していると思われます。
+    - (fkubota)DMSOは6パターン(time3パターン x dose2パターン)あればいいのでは?
+    - (cool_rabbit)理由はおそらく2つあって、
+        - 同じ量と時間でも実験するたびにばらつきがあるので複数回する必要がある
+        - 本物の薬剤候補を使って実験する時は、同時に同じプレートにコントロールを置く必要がある
+        後者に関して、例えば晴天の日にtreatment群をやって、雨天の日にcontrol群をしてしまうと、未知の天気の影響が実験に出るかもしれないですよね。なので必ず同じ日に同じプレート内でコントロールを置く必要があります。ただしコントロールの数を薬剤と同じ数ほどは用意しなくてもいいので、例えば薬剤10種類とDMSO1つを同じプレート内の異なる11個の穴で同時に実験しているイメージです。
