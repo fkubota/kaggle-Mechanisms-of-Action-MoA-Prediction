@@ -132,3 +132,5 @@ sample_submission.csv - 正しい形式の提出ファイル．
 - TASSANとにこ猫さんと議論した。nonscoredを使うときは、以下のようにすべきという見解になった。
 
     <img src='./data/info/readme/007.png' width='500'>
+
+### 20201013
