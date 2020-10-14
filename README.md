@@ -48,13 +48,13 @@ sample_submission.csv - 正しい形式の提出ファイル．
 
 ### input
 
-|filename|file size|shape|
-|----|---|---|
-|sample_submission.csv|3.2M|(3,982, 207)|
-|test_features.csv|25M|(3,982, 876)|
-|train_features.csv|150M|(23,814, 876)|
-|train_targets_nonscored.csv|19M|(23,814, 403)|
-|train_targets_scored.csv|9.7M|(23,814, 207)|
+|filename|file size|shape|comment|
+|----|---|---|---|
+|sample_submission.csv|3.2M|(3,982, 207)|---|
+|test_features.csv|25M|(3,982, 876)|このデータセットはpublicデータセットと完全に等しい。privateはpublicの4倍のサイズ。|
+|train_features.csv|150M|(23,814, 876)|---|
+|train_targets_nonscored.csv|19M|(23,814, 403)|---|
+|train_targets_scored.csv|9.7M|(23,814, 207)|---|
 
 **train_fatures.cv**
 - shape: (23814, 876)
@@ -148,6 +148,11 @@ sample_submission.csv - 正しい形式の提出ファイル．
 
     <img src='./data/info/readme/008.png' width='500'>
 
+    - cp_timeに関して
+        - 72時間経過すると、薬剤はその効果を失う可能性がある。つまり、コントロールと区別がつかない場合がある。
+    - 手元にあるtestデータは、publicのデータセットに等しい。
+        - privateのデータセットは完全に未知。
+
 - dataに施した前処理は、quantile normalizationだけではないらしい。([discussion](https://www.kaggle.com/c/lish-moa/discussion/184005#1034211))
 
 - cool_rabbitさんに質問(コントロール群について)
@@ -158,3 +163,16 @@ sample_submission.csv - 正しい形式の提出ファイル．
         - 同じ量と時間でも実験するたびにばらつきがあるので複数回する必要がある
         - 本物の薬剤候補を使って実験する時は、同時に同じプレートにコントロールを置く必要がある
         後者に関して、例えば晴天の日にtreatment群をやって、雨天の日にcontrol群をしてしまうと、未知の天気の影響が実験に出るかもしれないですよね。なので必ず同じ日に同じプレート内でコントロールを置く必要があります。ただしコントロールの数を薬剤と同じ数ほどは用意しなくてもいいので、例えば薬剤10種類とDMSO1つを同じプレート内の異なる11個の穴で同時に実験しているイメージです。
+
+### 20201014
+- [このディスカッション](https://www.kaggle.com/c/lish-moa/discussion/184005#1034211)で、quantile normalizationについて言及している
+    - qn されていれば、ユニークな値になるはす。しかしなっていない。
+    - ホストはqnしていると[コメント](https://www.kaggle.com/c/lish-moa/discussion/180390#1000307)している。
+- sklearnのメトリックlog_lossはある(targetの)カラム全てに0が入っているとエラーが出る仕様になっている。
+    - 以下のように自分で定義すればよさそう。
+        ```python
+        def log_loss_metric(y_true, y_pred):
+            loss = - np.mean(np.mean(y_true * np.log(y_pred) + (1 - y_true) * np.log(1 - y_pred), axis = 1))
+            return loss
+        ```
+    
