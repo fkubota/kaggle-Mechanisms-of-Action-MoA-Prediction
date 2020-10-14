@@ -9,6 +9,11 @@ Mechanism of Action(MoA)とは、薬剤がその薬理学的効果を発揮す�
 ### info
 - [googledrive](https://drive.google.com/drive/u/1/folders/1JGawvjsXcoTEVL_VHkRvE1J7-UclvA7u)
 - [issue board](https://github.com/fkubota/kaggle-Mechanisms-of-Action-MoA-Prediction/projects/1)
+- Important person
+
+|name|detail|
+|---|---|
+|[mrbhbs](https://www.kaggle.com/mrbhbs/discussion?sortBy=latestPost&group=commentsAndTopics&page=1&pageSize=20)|ホスト。ドメイン知識に関するディスカッションのコメントによく現れる。|
 
 ### Overview(DeepL)
 MITとハーバード大学ブロード研究所、ハーバード大学イノベーション科学研究所（LISH）、NIH Common Funds Library of Integrated Network-Based Cellular Signatures（LINCS）内のプロジェクトであるコネクティビティマップは、MoA予測アルゴリズムの改善を通じて医薬品開発を前進させることを目的に、この課題を提示しています。
@@ -176,3 +181,10 @@ sample_submission.csv - 正しい形式の提出ファイル．
             return loss
         ```
     
+- ぼーっとEDAしてた。
+    - 最大値最小値を-10~10に正規化してるけど、min_max_scalerじゃなくて、サチュレイトさせてるっぽいんだよなー。
+
+    <img src='./data/info/readme/009.png' width='500'>
+
+    こんなアイデアおもしろいのでは？
+    <img src='./data/info/readme/010.jpg' width='300'>
