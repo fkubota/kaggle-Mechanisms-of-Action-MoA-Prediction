@@ -182,11 +182,11 @@ sample_submission.csv - 正しい形式の提出ファイル．
         ```
     
 - ぼーっとEDAしてた。
-    - 最大値最小値を-10~10に正規化してるけど、min_max_scalerじゃなくて、サチュレイトさせてるっぽいんだよなー。
+    - 最大値最小値を-10~10に正規化してるけど、min_max_scalerじゃなくて、サチュレイトさせてるっぽいんだよなー。  
 
-    <img src='./data/info/readme/009.png' width='500'>
+    <img src='./data/info/readme/009.png' width='500'>  
 
-    こんなアイデアおもしろいのでは？
-    <img src='./data/info/readme/010.jpg' width='300'>
+    こんなアイデアおもしろいのでは？  
+    <img src='./data/info/readme/010.jpg' width='300'>  
 
 ### 20201015
