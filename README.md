@@ -188,3 +188,5 @@ sample_submission.csv - 正しい形式の提出ファイル．
 
     こんなアイデアおもしろいのでは？
     <img src='./data/info/readme/010.jpg' width='300'>
+
+### 20201015
