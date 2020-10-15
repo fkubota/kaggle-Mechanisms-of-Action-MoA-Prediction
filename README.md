@@ -190,3 +190,5 @@ sample_submission.csv - 正しい形式の提出ファイル．
     <img src='./data/info/readme/010.jpg' width='300'>  
 
 ### 20201015
+- cool_rabbitさんのアイデア(leak を避ける方法)
+    - target の総数でグループ分けする
