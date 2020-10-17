@@ -14,6 +14,7 @@ Mechanism of Action(MoA)とは、薬剤がその薬理学的効果を発揮す�
 |name|detail|
 |---|---|
 |[mrbhbs](https://www.kaggle.com/mrbhbs/discussion?sortBy=latestPost&group=commentsAndTopics&page=1&pageSize=20)|ホスト。ドメイン知識に関するディスカッションのコメントによく現れる。|
+|[Michael Maguire](https://www.kaggle.com/thawatt/discussion?sortBy=latestPost&group=commentsAndTopics&page=1&pageSize=20)|ホストに良い質問ぶつけてくれてるマスター。|
 
 ### Overview(DeepL)
 MITとハーバード大学ブロード研究所、ハーバード大学イノベーション科学研究所（LISH）、NIH Common Funds Library of Integrated Network-Based Cellular Signatures（LINCS）内のプロジェクトであるコネクティビティマップは、MoA予測アルゴリズムの改善を通じて医薬品開発を前進させることを目的に、この課題を提示しています。
@@ -285,3 +286,38 @@ sample_submission.csv - 正しい形式の提出ファイル．
     同意でも反論でもいいのでみなさんと認識を合わせたいです。
     よろしくおねがいします。
     ```
+
+### 20201017
+- cool_rabbitさんからのお告げ
+    ```
+    以下はそのGroup内の一部のsig_idで細胞殺傷能力が高い(cで-10近くの値)ものです。
+    ・G1: MoAなし
+    ・G10: dna_inhibitor
+    ・G23: pdgfr_inhibitor
+    ・G33: pi3k_inhibitor
+    ・G34: sodium_channel_inhibitor
+    ・G42: topoisomerase_inhibitor
+    ・G124: serine_threonine_kinase_inhibitor
+    ・G169: protein_synthesis_inhibitor
+    ・G173: alk_inhibitor
+    ・G189: atpase_inhibitor
+    ・G201: selective_estrogen_receptormodulator(serm)
+    ・G225: topoisomerase_inhibitor+rna_synthesis_inhibitor
+    ・G328: proteasome_inhibitor
+    ・G364: aurora_kinase_inhibitor+mek_inhibitor
+    ・G374: exportin_antagonist
+    ・G377: estrogen_receptor_antagonist
+    ・G444: stat_inhibitor
+    ・G451: apoptosis_inhibitor
+    ・G471: flt3_inhibitor+jak_inhibitor
+    ・G513: cyclooxygenase_inhibitor+lipoxygenase_inhibitor+nfkb_inhibitor+histone_acetyltransferase_inhibitor
+    ・G584: apoptosis_stimulant+bcl_inhibitor+ikk_inhibitor+nfkb_inhibitor+nitric_oxide_production_inhibitor+nrf2_activator+ppar_receptor_agonist+glutathionereductase(nadph)_activators+heme_oxygenase_activators+reducing_agent
+    ・G634: na_k-atpase_inhibitor
+    ・G637: flt3_inhibitor+kit_inhibitor+pdgfr_inhibitor+vegfr_inhibitor+ret_inhibitor
+    逆にこれら以外のGroupは細胞殺傷能力は弱〜中程度でした。
+    ```
+
+- ドメイン知識を得るのに重要な[discussion](https://www.kaggle.com/c/lish-moa/discussion/191487)
+    - めっちゃ質問しまくってる。
+
+
