@@ -327,4 +327,22 @@ sample_submission.csv - 正しい形式の提出ファイル．
 
 
 ### 20201019
+- nb002
+    - とりあえず5-foldでコード書いた。
+    - ただ、KFoldで5分割しただけなので、薬剤リークが存在する。
+    - result
+        - cv: 0.015140
+        - loss
 
+        <img src='./data/info/readme/016.png' width='400'>  
+
+### 20201020
+- nb002の後半で、log_lossの挙動見てたけど、結構えぐい。後処理考えないとなー。
+
+    <img src='./data/info/readme/017.png' width='400'>  
+
+- kaggle001
+    - nb002のモデルを使う
+    - result
+        - cv: 0.015140
+        - sub: 0.01910
