@@ -376,22 +376,14 @@ sample_submission.csv - 正しい形式の提出ファイル．
     - おそらく、foldごとにtargetの分布差が生じているものだと思われる。
     - それを一定にするような方法を考える。
     
-    - 任意のtargetが1になる回数を各fold毎にプロットする
+    - 任意のtargetが1になる回数を各fold毎にプロット
 
-    <img src='./data/info/readme/018.png' width='1000'>  
+        <img src='./data/info/readme/018.png' width='1000'>  
 
+    - 上記の図をbinary化
 
+        <img src='./data/info/readme/019.png' width='1000'>  
 
-
-
-
-
-
-
-
-
-
-
-
-
+    - 各targetがgroupに出現する回数を数えた
+        - 悲報: 206のターゲットの内、88はある一つのグループに属していることがわかった。
 
