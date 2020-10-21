@@ -344,5 +344,54 @@ sample_submission.csv - 正しい形式の提出ファイル．
 - kaggle001
     - nb002のモデルを使う
     - result
-        - cv: 0.015140
+        - cv:  0.015140
         - sub: 0.01910
+
+- nb004
+    - targetの情報を用いてgroupを作成する
+    - nb003では、696個にグルーピングした。
+    - all_target = 0 のグループがかなり多いのでそれを細かく分割しようと思う。
+    - get_696_strategy_fold(group, n_splits) という関数を作成した
+    - get_696_strategy_fold
+        - group_0とgroup_not0分ける
+        - gourp_0を5fold, group_not0をgroup5foldする
+        - fold情報を合体させる
+
+
+- nb005
+    - nb004で作成した、get_696_strategy_foldを使用した
+    - result
+        - n_splits = 5
+        - cv: 0.024645
+
+### 20201021
+- kagglenb002
+        - nb005で作成したモデルを使用
+        - result
+            - cv:  0.024645
+            - sub: 0.02057
+
+- nb006
+    - nb005のcvが良くなかったので、その解析を行なう
+    - おそらく、foldごとにtargetの分布差が生じているものだと思われる。
+    - それを一定にするような方法を考える。
+    
+    - 任意のtargetが1になる回数を各fold毎にプロットする
+
+    <img src='./data/info/readme/018.png' width='1000'>  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
