@@ -395,5 +395,41 @@ sample_submission.csv - 正しい形式の提出ファイル．
             - 残りはすべてtestへ
             - 1,2の両方
         - つまり、薬剤リークはきにしなくていいってこと？
-            - 話し合った結果そうっぽい。
+            - 話し合った結果その通りっぽい。
+        
+    - kfoldを行った
+        - 任意のtargetが1になる回数をfold毎に計算した　
+        - fold毎にtargetの総数が0になっている部分の可視化
+            - おもったよりひどくないが、黒い部分をなくしたい
+
+            <img src='./data/info/readme/020.png' width='1000'>  
+
+    - multi-stratified-kfoldを行った
+        - fold毎にtargetの総数が0になっている部分の可視化
+            - かなりいい感じ
+
+            <img src='./data/info/readme/021.png' width='1000'>  
+        
+        - 黒い部分が残ってるが、そもそもサンプルが1つしかない
+
+            <img src='./data/info/readme/022.png' width='400'>  
+
+
+### 20201022
+- 現在1位の人が行ったことのまとめ[ディスカッション](https://www.kaggle.com/c/lish-moa/discussion/183377)
+    - 個々に書いてあること全部試したい。
+- ひらさんから教えてもらったLBとCVの乖離が大きい時の汎用的な対処法[discussion](https://www.kaggle.com/c/lish-moa/discussion/190949)
+
+- TASSANが教えてくれた[disucussion](https://www.kaggle.com/c/lish-moa/discussion/191135)
+    ```
+    これは、atp-sensitive_potassium_channel_antagonistとerbb2_inhibitor
+    (どちらもtarget=1のものが1行しかない)について
+    全部0埋めした場合と0.000012埋めした場合のpublic scoreを比較した
+    discussionなのですが、かなり差が開いてますね...
+    ```
+
+- TASSANの解析
+    - なぜか、48D1だけ大きな値を取っている。
+
+        <img src='./data/info/readme/023.png' width='400'>  
 
