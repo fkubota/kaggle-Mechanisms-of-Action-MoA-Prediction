@@ -479,3 +479,5 @@ sample_submission.csv - 正しい形式の提出ファイル．
     - `atp-sensitive_potassium_channel_antagonist` と `erbb2_inhibitor` が1になるサンプルが一つしかないので、定数で埋めるという作戦。
     - 0埋めの場合: 0.2055
     - 0.000012埋めの場合: 0.02004
+
+### 20201024
