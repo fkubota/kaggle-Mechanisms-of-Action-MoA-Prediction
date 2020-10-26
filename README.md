@@ -482,12 +482,26 @@ sample_submission.csv - 正しい形式の提出ファイル．
 
 ### 20201024
 - nb008
-    - -10が含まれている割合(%)ランキング
+    - -9.8未満が含まれている割合(%)ランキング
 
         <img src='./data/info/readme/026.png' width='300'>  
 
     - 1位
 
         <img src='./data/info/readme/027.png' width='300'>  
+    
+    - -9.8未満を指数分布に置き換えた例
+
+        <img src='./data/info/readme/028.png' width='500'>  
+    
+    - add_exp_noise関数を作成
+        - lowとhighの処理合わせても、数秒程度で終わる
+    
 
 ### 20201026
+- nb009
+    - nb008のadd_exp_noise関数を使う
+    - hoge
+
+### 20201027
+- [tabnetの論文](https://arxiv.org/pdf/1908.07442.pdf)
