@@ -481,3 +481,13 @@ sample_submission.csv - 正しい形式の提出ファイル．
     - 0.000012埋めの場合: 0.02004
 
 ### 20201024
+- nb008
+    - -10が含まれている割合(%)ランキング
+
+        <img src='./data/info/readme/026.png' width='300'>  
+
+    - 1位
+
+        <img src='./data/info/readme/027.png' width='300'>  
+
+### 20201026
