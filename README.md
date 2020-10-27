@@ -501,7 +501,39 @@ sample_submission.csv - 正しい形式の提出ファイル．
 ### 20201026
 - nb009
     - nb008のadd_exp_noise関数を使う
-    - hoge
+    - result
+        - cv: 0.015140
+        - cv(nb002): 0.015191
+        - 悪くなってるからボツ
 
 ### 20201027
-- [tabnetの論文](https://arxiv.org/pdf/1908.07442.pdf)
+- tableでNNを使う方法について簡単に調べた　
+    - [tabnetの論文](https://arxiv.org/pdf/1908.07442.pdf)
+    - table dataを画像にしてCNNを使用する[論文](https://www.biorxiv.org/content/10.1101/2020.05.02.074203v1.full)
+    - domain知識に大事な[discussion](https://www.kaggle.com/c/lish-moa/discussion/193363)
+
+- nb010
+    - nb002のモデルを使って後処理を考える
+    - 0.3~0.7の値を持つ場合、valに置き換えてみた
+        - original logloss = 0.0151359400333833
+        <img src='./data/info/readme/029.png' width='200'>  
+
+        - 悪くなってますね。
+        - いくつか試してみたけど良くなってるような感じはしなかった
+    - target==1の時のoofの分布を見てみた。そもそもどうなってるんやろか。
+
+        - nはtarget==1の個数 
+        - 理想は1にピークがある構造
+        - nが小さいほど、0に近い分布になってしまっている=学習がうまくいっていない
+
+        <img src='./data/info/readme/030.png' width='600'>  
+
+    - じゃあtarget==1の個数が小さい部分について対処すればいいのか？と思って各カラムでloglossを見てみた
+        - 横軸:  あるtarget columnのの tartget==1になる数
+        - 縦軸:  そのtargetのlogloss
+
+        <img src='./data/info/readme/031.png' width='300'>  
+
+        - グラフで見ると、target==1になる数が小さいほど、lossは小さかった...
+            - target==1になる数が小さいtargetは学習がうまくいかない。
+            - しかし、そもそも0に近い値を出力しておけばloglossは低い値を取る。(1の数が少ないので)
