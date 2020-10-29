@@ -556,3 +556,6 @@ sample_submission.csv - 正しい形式の提出ファイル．
 
         <img src='./data/info/readme/032.jpg' width='300'>  
     
+### 20201030
+- cool_rabbitさんが気になってる[discussion](https://www.kaggle.com/c/lish-moa/discussion/193878)
+
