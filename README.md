@@ -16,6 +16,12 @@ Mechanism of Action(MoA)とは、薬剤がその薬理学的効果を発揮す�
 |[mrbhbs](https://www.kaggle.com/mrbhbs/discussion?sortBy=latestPost&group=commentsAndTopics&page=1&pageSize=20)|ホスト。ドメイン知識に関するディスカッションのコメントによく現れる。|
 |[Michael Maguire](https://www.kaggle.com/thawatt/discussion?sortBy=latestPost&group=commentsAndTopics&page=1&pageSize=20)|ホストに良い質問ぶつけてくれてるマスター。|
 
+### Paper
+|No.|Status|Name|Detail|Date|Url|
+|---|---|---|---|---|---|
+|01|Todo|TabNet: Attentive Interpretable Tabular Learning|TabNetの原論文|2020|[url](https://arxiv.org/abs/1908.07442)|
+|02|Todo|A novel method for classification of tabular data using convolutional neural networks|テーブルデータに対してCNNを使う手法TACの論文。|2020|[url](https://www.biorxiv.org/content/10.1101/2020.05.02.074203v1.full)|
+
 ### Overview(DeepL)
 MITとハーバード大学ブロード研究所、ハーバード大学イノベーション科学研究所（LISH）、NIH Common Funds Library of Integrated Network-Based Cellular Signatures（LINCS）内のプロジェクトであるコネクティビティマップは、MoA予測アルゴリズムの改善を通じて医薬品開発を前進させることを目的に、この課題を提示しています。
 
@@ -76,6 +82,7 @@ sample_submission.csv - 正しい形式の提出ファイル．
 |c-[0, 99]|signify cell viability data. 細胞の生存率を表す。|
 
 ## features
+
 ## Log
 ### 20201006
 - join
@@ -539,4 +546,9 @@ sample_submission.csv - 正しい形式の提出ファイル．
             - しかし、そもそも0に近い値を出力しておけばloglossは低い値を取る。(1の数が少ないので)
 
 ### 20201028
-hoge
+- TACの論文読んでた。
+    - まだ全然できてない。
+
+### 20201029
+- cool_rabbitさんとのディスカッション
+    <img src='./data/info/readme/032.jpg' width='300'>  
