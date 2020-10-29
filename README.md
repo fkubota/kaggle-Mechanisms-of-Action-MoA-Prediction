@@ -551,4 +551,8 @@ sample_submission.csv - 正しい形式の提出ファイル．
 
 ### 20201029
 - cool_rabbitさんとのディスカッション
-    <img src='./data/info/readme/032.jpg' width='300'>  
+    - 結果として、z-scoreの計算でカラム間の大小に意味がないことがわかった。
+    - z-score = (Xi - med(X))/σ
+
+        <img src='./data/info/readme/032.jpg' width='300'>  
+    
