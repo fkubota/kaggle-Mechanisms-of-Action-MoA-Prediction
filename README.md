@@ -588,3 +588,43 @@ sample_submission.csv - 正しい形式の提出ファイル．
         5. この画像に対してCNNを持ちいてトレーニングする。
 
         <img src='./data/info/readme/034.jpg' width='600'>  
+
+### 20201101
+
+- nb012
+    - nb002の改良　
+    - `MultiStratifiedKFold` と `BCEWithLogitsLoss` を追加
+    - result
+        cv: 0.015070
+        cv(nb002): 0.015140
+
+- nb013
+    - nb012の改良
+    - SmoothLogitsLossを導入
+    - result
+        - cv: 0.015085
+        - cv(nb012): 0.015070
+        - cv(nb002): 0.015140
+
+        |BCEWithLogitsLoss|SmoothLogitsLoss|
+        |---|---|
+        |<img src='./data/info/readme/035.png' width='600'> |<img src='./data/info/readme/036.png' width='600'> |
+
+- チームでのディスカッション
+    - trainとtestで薬剤は違うだろうという話になった。　
+    - 薬剤は違うが、MoAが同じものがあるのでしっかりそれを予測すればいい。
+
+
+- kagglenb004
+    - ニコ猫さんの[kagglenb](https://www.kaggle.com/kazuki123/new-baseline-pytorch-moa?scriptVersionId=45879239)を解析
+        - このノートブックめっちゃスコア良い。
+        - label smoothing入れたらlb良くなったみたい 
+        - cv=0.01442165399	LB=0.01831
+
+- kagglenb005
+    - ニコ猫さんの[kagglenb](https://www.kaggle.com/fkubota/kagglenb005-from-nikoneko-san/edit)を解析
+        - kagglenb004のlabel smoothingを抜いたバージョン
+    - kagglenb004, 005の比較
+        |BCEWithLogitsLoss|SmoothLogitsLoss|
+        |---|---|
+        |<img src='./data/info/readme/038.png' width='600'> |<img src='./data/info/readme/037.png' width='600'> |
