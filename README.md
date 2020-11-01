@@ -20,7 +20,7 @@ Mechanism of Action(MoA)とは、薬剤がその薬理学的効果を発揮す�
 |No.|Status|Name|Detail|Date|Url|
 |---|---|---|---|---|---|
 |01|Todo|TabNet: Attentive Interpretable Tabular Learning|TabNetの原論文|2020|[url](https://arxiv.org/abs/1908.07442)|
-|02|Todo|A novel method for classification of tabular data using convolutional neural networks|テーブルデータに対してCNNを使う手法TACの論文。|2020|[url](https://www.biorxiv.org/content/10.1101/2020.05.02.074203v1.full)|
+|02|Done|A novel method for classification of tabular data using convolutional neural networks|テーブルデータに対してCNNを使う手法TACの論文。|2020|[url](https://www.biorxiv.org/content/10.1101/2020.05.02.074203v1.full)|
 
 ### Overview(DeepL)
 MITとハーバード大学ブロード研究所、ハーバード大学イノベーション科学研究所（LISH）、NIH Common Funds Library of Integrated Network-Based Cellular Signatures（LINCS）内のプロジェクトであるコネクティビティマップは、MoA予測アルゴリズムの改善を通じて医薬品開発を前進させることを目的に、この課題を提示しています。
@@ -544,6 +544,7 @@ sample_submission.csv - 正しい形式の提出ファイル．
         - グラフで見ると、target==1になる数が小さいほど、lossは小さかった...
             - target==1になる数が小さいtargetは学習がうまくいかない。
             - しかし、そもそも0に近い値を出力しておけばloglossは低い値を取る。(1の数が少ないので)
+            - n target==1 が非常に少ないものはうまく学習ができないから対策とらないといけないと思ってたけど、全然対策しなくてよさそう...
 
 ### 20201028
 - TACの論文読んでた。
@@ -555,7 +556,26 @@ sample_submission.csv - 正しい形式の提出ファイル．
     - z-score = (Xi - med(X))/σ
 
         <img src='./data/info/readme/032.jpg' width='300'>  
+
+- NikoNekoさんがSmoothBCEWithLogitsLossを入れただけでものすごいスコアの変化をしたとの報告があった
+    - ↓のNoはspread sheetの番号
+    -  result
+        - [url](https://www.kaggle.com/kazuki123/new-baseline-pytorch-moa?scriptVersionId=45879239)
+        - No10: cv=0.014206789	LB=0.01848
+        - No19: cv=0.01442165399	LB=0.01831
     
-### 20201030
 - cool_rabbitさんが気になってる[discussion](https://www.kaggle.com/c/lish-moa/discussion/193878)
 
+### 20201030
+- nb011
+    - target==0の数が多いcolと少ないcolで分けて学習した
+    - result
+        - 結果は悪くなった...理由がわからん。
+        - cv(original): 0.015140141106353578
+        - cv(threshold): 0.015442511864467509 
+
+        <img src='./data/info/readme/033.png' width='300'>  
+
+
+### 20201031
+- paper02を読んでた。 
