@@ -600,9 +600,9 @@ sample_submission.csv - 正しい形式の提出ファイル．
 
 - nb013
     - nb012の改良
-    - SmoothLogitsLossを導入
+    - SmoothLogitsLoss(smoothing=0.001)を導入
     - result
-        - cv: 0.015085
+        - cv: 0.015192
         - cv(nb012): 0.015070
         - cv(nb002): 0.015140
 
@@ -625,6 +625,36 @@ sample_submission.csv - 正しい形式の提出ファイル．
     - ニコ猫さんの[kagglenb](https://www.kaggle.com/fkubota/kagglenb005-from-nikoneko-san/edit)を解析
         - kagglenb004のlabel smoothingを抜いたバージョン
     - kagglenb004, 005の比較
+        - 右上のsmooth_logits_loss はオレンジが２山になってる。
+        - target=1と0の区別がついていない？
+
         |BCEWithLogitsLoss|SmoothLogitsLoss|
         |---|---|
-        |<img src='./data/info/readme/038.png' width='600'> |<img src='./data/info/readme/037.png' width='600'> |
+        |<img src='./data/info/readme/038.png' width='800'> |<img src='./data/info/readme/037.png' width='800'> |
+
+- nb014
+    - nb012(original), nb013(label smoothing)の結果の比較
+    - result
+        - smoothing 入れると、広がるような感じが見られる
+
+        <img src='./data/info/readme/039.png' width='400'>  
+
+- kagglenb006
+    - nb012を提出
+    - result
+        - cv: 0.015070
+        - LB: 0.01909
+        - LB(kagglenb002): 0.02057
+        - kagglenb002との違いは、MultiLabelStratifiedKFold、BCEWithLogitsLoss追加を行ったこと
+
+
+### 20201102
+
+- kagglenb007
+    - nb013を提出
+    - kagglenb006にlabel smoothing入れた感じ
+    - result
+        - cv: 0.015085
+        - LB: 0.01888
+        - LB(kagglenb005): 0.01909
+    
