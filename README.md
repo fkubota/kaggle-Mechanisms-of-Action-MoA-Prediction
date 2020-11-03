@@ -658,3 +658,5 @@ sample_submission.csv - 正しい形式の提出ファイル．
         - LB: 0.01888
         - LB(kagglenb005): 0.01909
     
+
+### 20201103
