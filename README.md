@@ -638,6 +638,13 @@ sample_submission.csv - 正しい形式の提出ファイル．
         - smoothing 入れると、広がるような感じが見られる
 
         <img src='./data/info/readme/039.png' width='400'>  
+    
+    - smoothingをさらに深ぼる。target=0の２山の原因を探りたいので、doseとtimeの依存を調べてみた。
+
+        |smooth|dose|time|
+        |---|---|---|
+        | <img src='./data/info/readme/040.png' width='400'>  | <img src='./data/info/readme/041.png' width='400'>  | <img src='./data/info/readme/042.png' width='400'>  |
+
 
 - kagglenb006
     - nb012を提出
@@ -658,3 +665,5 @@ sample_submission.csv - 正しい形式の提出ファイル．
         - LB: 0.01888
         - LB(kagglenb005): 0.01909
     
+
+### 20201103
