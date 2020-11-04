@@ -690,9 +690,19 @@ sample_submission.csv - 正しい形式の提出ファイル．
     - nb013の改良
     - permutation importanceを実装
     - modelそのものに手は加えていない
+    - result
+        - なんか `c-65` と `c-98` がめっちゃいいんだが。
+        - プラス側に突き抜けているやつはいなかった。
+        - permutation importance はめっちゃ時間かかるからあまりやらないほうがいいかも。
+
+            <img src='./data/info/readme/044.png' width='400'>  
 
 - nb016
     - nb015のモデルを使ってtarget == 1の数が多いものと少ないものの解析を行なう
 
 - nb017
     - hoge    
+
+
+### 20201104
+- nb018
