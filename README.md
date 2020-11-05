@@ -21,6 +21,7 @@ Mechanism of Action(MoA)とは、薬剤がその薬理学的効果を発揮す�
 |---|---|---|---|---|---|
 |01|Todo|TabNet: Attentive Interpretable Tabular Learning|TabNetの原論文|2020|[url](https://arxiv.org/abs/1908.07442)|
 |02|Done|A novel method for classification of tabular data using convolutional neural networks|テーブルデータに対してCNNを使う手法TACの論文。|2020|[url](https://www.biorxiv.org/content/10.1101/2020.05.02.074203v1.full)|
+|02|Todo|Focal Loss for Dense Object Detection|focal lossの原論文|2017|[url](https://arxiv.org/abs/1708.02002)|
 
 ### Overview(DeepL)
 MITとハーバード大学ブロード研究所、ハーバード大学イノベーション科学研究所（LISH）、NIH Common Funds Library of Integrated Network-Based Cellular Signatures（LINCS）内のプロジェクトであるコネクティビティマップは、MoA予測アルゴリズムの改善を通じて医薬品開発を前進させることを目的に、この課題を提示しています。
@@ -705,4 +706,10 @@ sample_submission.csv - 正しい形式の提出ファイル．
 
 
 ### 20201104
+- **hostがtrain_drug.csv を公開した！！今更かい！！**
+- 薬剤が公開されたのでfoldの切り方を考える。
+    - いい感じの[ディスカッション](https://www.kaggle.com/c/lish-moa/discussion/195195)
+
+- ホスト曰く「trainの薬剤はtestにも出現している」
+
 - nb018
