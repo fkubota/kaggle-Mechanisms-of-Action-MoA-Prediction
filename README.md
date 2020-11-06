@@ -701,8 +701,22 @@ sample_submission.csv - 正しい形式の提出ファイル．
 - nb016
     - nb015のモデルを使ってtarget == 1の数が多いものと少ないものの解析を行なう
 
+        <img src='./data/info/readme/045.png' width='300'>  
+
 - nb017
-    - hoge    
+    - nb017でやった解析を元に[スライド](https://docs.google.com/presentation/d/1qmadG6DIOe4P0Z7jLhqGeySW0fFB-VbkRSr74xKGClI/edit#slide=id.g9f5421c9e1_0_55)を作成した    
+
+        <img src='./data/info/readme/046.png' width='500'>  
+
+        <img src='./data/info/readme/047.png' width='500'>  
+
+        <img src='./data/info/readme/048.png' width='500'>  
+
+        <img src='./data/info/readme/049.png' width='500'>  
+
+        <img src='./data/info/readme/050.png' width='500'>  
+
+        <img src='./data/info/readme/051.png' width='500'>  
 
 
 ### 20201104
@@ -712,7 +726,70 @@ sample_submission.csv - 正しい形式の提出ファイル．
 
 - ホスト曰く「trainの薬剤はtestにも出現している」
 
-- nb018
-
 
 ### 20201105
+- nb018
+    - 新しく配られた`train_drug.csv`を見てみる。
+    - value_countsしてみた。top8は何度も使われている
+
+        |rank|drug_id|count|
+        |---|---|---|
+        |1|87d714366|     718|
+        |2|9f80f3f77|     246|
+        |3|8b87a7a83|     203|
+        |4|5628cb3ee|     202|
+        |5|d08af5d4b|     196|
+        |6|292ab2c28|     194|
+        |7|d50f18348|     186|
+        |8|d1b47f29d|     178|
+        |9|67c879e79|      19|
+        |10|52d1e6f43|      18|
+        |11|d488d031d|      18|
+
+- TASSANがtestにどの程度入っているか計算していた
+
+    - len(train_features) / len(test_features) = 23,814 / 3,982 = 5.98
+
+        |rank|drug_id|count(train)|count(test)|count(train)/count(test)|
+        |---|---|---|---|---|
+        |1|87d714366|718|142|5.056|
+        |2|9f80f3f77|246|14|17.571|
+        |3|8b87a7a83|203|24|8.458|
+        |4|5628cb3ee|202|19|10.632|
+        |5|d08af5d4b|196|28|7|
+        |6|292ab2c28|194|13|14.923|
+        |7|d50f18348|186|22|8.454|
+        |8|d1b47f29d|178|24|7.417|
+        |9|67c879e79|19|-|-|
+        |10|52d1e6f43|18|-|-|
+        |11|d488d031d|18|-|-|
+
+
+### 20201106
+- nb019
+    - focal loss を導入
+    - [このソースを参考](https://github.com/andrijdavid/FocalLoss/blob/master/focalloss.py)
+    - [focal lossの紹介](https://qiita.com/agatan/items/53fe8d21f2147b0ac982)
+    - result
+        - モデルの保存はgamma=0.5で行った
+        - cv(gamma=0):0.015074
+        - cv(gamma=0.1): 0.015195
+        - cv(gamma=0.5): 0.015526
+        - cv(gamma=1): 0.017204
+
+        - loss
+            - gamma>=0.5だと過学習が抑えられていることがわかる
+
+            |gamma=0.1|gamma=0.5|gamma=1|
+            |---|---|---|
+            |<img src='./data/info/readme/052.png' width='500'>   |<img src='./data/info/readme/053.png' width='500'>  |<img src='./data/info/readme/054.png' width='500'>  |
+
+        - logloss
+
+            <img src='./data/info/readme/055.png' width='300'>  
+
+- kagglenb008
+    - うーんだめだったか。
+    - result
+        - cv: 0.015526(gamma=0.5)
+        - LB: 0.01916
