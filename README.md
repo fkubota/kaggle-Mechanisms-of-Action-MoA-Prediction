@@ -869,7 +869,7 @@ sample_submission.csv - 正しい形式の提出ファイル．
         - cv: 0.016205
         - cv(nb015, 薬剤リークあり): 0.015172
 
-# 20201122
+### 20201122
 - nb022
     - nb021の改良
     - SmoothLogitsLoss の最適化を行なう
@@ -893,3 +893,21 @@ sample_submission.csv - 正しい形式の提出ファイル．
     - n(target==1の数)が少ないtargetは学習が殆どできない。
     - 多くの参加者のモデルに差はない
     - シェイクに巻き込まれないために、一定値埋めで提出してもいいのでは？
+
+
+### 20201125
+- nb023
+    - nb022を改良
+    - nb019のfocal loss を導入する
+    - gamma を最適化してみる
+    - 微妙でした！
+    - 実験条件詳細
+        - 5fold
+        - 薬剤リーク無し、top8除く、control除く
+        - modelはMLP
+        - 特徴量追加なし
+
+    <img src='./data/info/readme/061.png' width='400'> <img src='./data/info/readme/062.png' width='400'>  
+
+
+### 20201126
