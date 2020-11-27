@@ -911,3 +911,37 @@ sample_submission.csv - 正しい形式の提出ファイル．
 
 
 ### 20201126
+- nb024
+    - nb021の改良
+    - top8除く
+    - ctrl除く
+    - result
+        - cv: 0.019604
+
+
+### 20201127
+- nb025
+    - nb021の改良
+    - mixupを試す
+    - result
+        - cv: 0.019550
+        - めっちゃよくなってる！！
+
+
+- beta分布を書いて遊べる！
+    - https://homepage.divms.uiowa.edu/~mbognar/applets/beta.html
+    - alpha=beta の条件で、alphaを大きくすると、0.5を中心として大きな値を取る
+    - example
+
+    <img src='./data/info/readme/063.png' width='400'> <img src='./data/info/readme/064.png' width='400'>  
+
+    <img src='./data/info/readme/065.png' width='400'> <img src='./data/info/readme/066.png' width='400'>  
+
+    <img src='./data/info/readme/067.png' width='400'>  
+
+- nb026
+    - nb023の改良
+    - mixup_alphaをグリッドサーチ
+    - mixup_alphaは大きいほどよさそう。つまり混ぜる画像比率は半々が良さそう。
+
+    <img src='./data/info/readme/068.png' width='400'>  
