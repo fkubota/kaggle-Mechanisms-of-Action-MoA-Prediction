@@ -945,3 +945,11 @@ sample_submission.csv - 正しい形式の提出ファイル．
     - mixup_alphaは大きいほどよさそう。つまり混ぜる画像比率は半々が良さそう。
 
     <img src='./data/info/readme/068.png' width='400'>  
+
+
+### 20201128
+- nb027
+    - nb003の改良
+    - nonscoreを使わないgrouping
+    - 328個に別れた
+    - savefilename: data_ignore/output_nb/nb027/group.csv
