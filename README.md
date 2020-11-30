@@ -953,3 +953,40 @@ sample_submission.csv - 正しい形式の提出ファイル．
     - nonscoreを使わないgrouping
     - 328個に別れた
     - savefilename: data_ignore/output_nb/nb027/group.csv
+
+- nb028
+    - group_smote を作成
+    - 例えば、group328でuniqueの数を計算、5以上100以下のデータをsmoteで拡充
+
+- nb029
+    - nb025を改良
+    - nb025のgroup696をgroup328に変更
+    - nb020のfoldを使う
+    - top8を除く
+    - ctrlを除く
+    - result
+        - cv: 0.019622
+
+- nb030
+    - nb025を改良
+    - mixupを使う
+    - group328を使用
+    - nb020のfoldを使う
+    - ctrl除く
+    - top8を除く
+    - result
+        - cv: 0.019522
+
+- nb031
+    - nb030を改良
+    - nb028で作った、group_smoteを使う
+    - nb020のfoldを使う
+    - mixupも使う
+    - ctrl除く
+    - top8を除く
+    - result
+        - cv: 0.019622(ori)
+        - cv: 0.019522(mixup)
+        - cv: 0.019495(mixup + smote, n_min=60, n_max=99) 
+        - n_min, n_maxいろいろ調整したけど、n_min=60, n_max=99が一番良かった
+
