@@ -990,3 +990,6 @@ sample_submission.csv - 正しい形式の提出ファイル．
         - cv: 0.019495(mixup + smote, n_min=60, n_max=99) 
         - n_min, n_maxいろいろ調整したけど、n_min=60, n_max=99が一番良かった
 
+
+### 20201201
+finish!!!
