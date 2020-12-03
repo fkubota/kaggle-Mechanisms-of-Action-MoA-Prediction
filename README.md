@@ -2,6 +2,19 @@
 # kaggle-Mechanisms-of-Action-MoA-Prediction
 [Mechanisms of Action (MoA) Prediction](https://www.kaggle.com/c/lish-moa/overview) コンペのリポジトリ
 
+- result
+
+    - public: 0.01822
+
+    - private: 0.01609
+
+    - rank: 39/4373
+
+上位1%!!!!    
+ほとんど仲間のおかげ！！！
+
+<img src='./data/info/readme/069.png' width='800'>  
+
 
 ## Basics
 Mechanism of Action(MoA)とは、薬剤がその薬理学的効果を発揮するための特異的な生化学的相互作用を意味する。 ([参考](https://ja.wikipedia.org/wiki/作用機序))
@@ -992,6 +1005,33 @@ sample_submission.csv - 正しい形式の提出ファイル．
 
 
 ### 20201201
-finish!!!
+**finish!!!**  
+result
 
-### 20201203
+public: 0.566
+
+private: 0.599
+
+rank: 114/1390
+上位1%!!!!    
+ほとんど仲間のおかげ！！！
+
+**39/4373 位**
+
+<img src='./data/info/readme/069.png' width='800'>  
+
+## Winner Solution
+
+[summary]()
+
+|Rank(prv)|Detail|URL|
+|:---|---|---|
+|1|hoge|[url](hoge)|
+
+
+## 記事など
+
+|Title|Detail|URL|
+|---|---|---|
+|Kaggle Mechanisms of Action (MoA) Prediction 振り返り|めちゃいい感じにまとめられてる。好き。|[url](https://imokuri123.com/blog/2020/12/kaggle-lish-moa/)|
+|kaggleのMoAコンペ、参加人数、メダル圏内scoreなどのデータ取りしてみました|ランキングの推移とかまとめられてる。こういうの普段からやってみてーな。|[url](https://cpptake.com/archives/646)|
